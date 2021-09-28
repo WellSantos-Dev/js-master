@@ -1,20 +1,14 @@
-(function () {
-    const nomeUsuario = null
-    const elemento = document.querySelector(".top-bar p")
+(function saudacao() {
 
-    if (nomeUsuario) {
-        // document.querySelector(".top-bar p").textContent = "Bem-vindo(a), " + nomeUsuario
-
-        console.log(elemento.textContent)
-        // elemento.textContent = elemento.textContent + nomeUsuario
-        elemento.innerHTML += "<b>" + nomeUsuario + "</b>"
-    } else {
-        // elemento.parentElement.style.display = "none"
-        // elemento.remove()
-        const elementoParaRemover = elemento.parentElement
-        elementoParaRemover.parentElement.removeChild(elementoParaRemover)
+    function Pessoa(nickname) {
+        this.nickname = nickname
     }
 
-    console.log(elemento)
+    const well = new Pessoa('Wellzera')
+    const nath = new Pessoa('Nath123')
+    const p = document.querySelector('.top-bar p')
 
+    let pessoas = [nath, well]
+    
+    p.textContent += `${pessoas[1].nickname}`
 })()

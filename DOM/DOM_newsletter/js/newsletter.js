@@ -1,10 +1,7 @@
-const txtEmail = document.getElementById("txtEmail")
-const msgFeedback = document.getElementById("newsletterFeedback")
-
-
+let form = document.querySelector('#txtEmail')
+let newSlatter = document.querySelector('#newsletterFeedback')
 
 function cadastrarEmail() {
-    let email = txtEmail.value // email = ""
-    msgFeedback.innerHTML = `O email ${email} foi cadastrado com sucesso`
+    email = form.value;
+    newSlatter.innerHTML = `<p>O email ${email} foi registrado!</p>`
 }
-

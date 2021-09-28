@@ -1,16 +1,14 @@
-(function () {
-    const nomeUsuario = "Daniel"
+(function() {
+    
+    const nickname = "Well"
+    const hero = document.querySelector('.hero');
+    const topBarElement = document.createElement('div')
 
-    if (nomeUsuario) {
-        const topBarElemento = document.createElement("div")
-        topBarElemento.className = "top-bar"
-        topBarElemento.innerHTML = `<p> Olá, <b> ${nomeUsuario} </b></p>`
+    if(nickname){
+        topBarElement.className = "top-bar";
+        topBarElement.innerHTML += `<p>Olá, ${nickname}</p>`
 
-        // elementoPai.insertBefore(novoElemento, elementoReferencia)
-        const elementoPai = document.querySelector(".hero")
-        elementoPai.insertBefore(topBarElemento, elementoPai.firstElementChild)
-
-
+        hero.appendChild(topBarElement)
     }
-
+    
 })()
