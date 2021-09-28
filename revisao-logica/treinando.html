@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostra nome de pessoas</title>
+</head>
+<body>
+  
+  <div class="container"></div>
+  <script>
+
+    function Pessoa(nome, idade, fala) {
+      this.nome = nome;
+      this.idade = idade;
+      this.fala = fala;
+      this.falar = (fala) => {
+        return `${this.nome} falou: "${this.fala}"`
+      }
+    }
+
+    const well = new Pessoa('Wellington', 19, 'Olá')
+    const nath = new Pessoa('Nathally', 17, 'Oi')
+    const eunice = new Pessoa('Eunice', 42, 'Tudo bom?')
+
+    let pessoas = [well, nath, eunice]
+    console.log(pessoas[0].nome)
+
+    const container = document.querySelector('.container')
+  for(let i = 0; i < pessoas.length; i++) {
+    container.innerHTML += `O nome da pessoa é ${pessoas[i].nome} e ela tem ${pessoas[i].idade} anos.<br> ${pessoas[i].falar()}<br><br><br>`
+  }
+
+
+  </script>
+</body>
+</html>

@@ -1,3 +1,16 @@
+(function () {
+    function callback(cb) {
+        console.log("Principal function")
+        cb()
+    }
+
+    cb = () => {
+        console.log("New arrow function in 'callback'")
+    }
+
+    callback(cb)
+})()
+
 function fn(cb) {
     console.log("executar acao de callback")
     console.log(typeof cb)

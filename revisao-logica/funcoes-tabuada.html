@@ -1,43 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tabuada com funções</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <h1>funcoes - tabuada</h1>
-
+    <h1>Funções tabuada</h1>
     <button onclick="mostrarTabuada()">Mostrar Tabuada</button>
-    <button onclick="limparTabuada()">Limpar Tabuada</button>
-    <div id="output"></div>
+    <button onclick="removertabuada()">Remover Tabuada</button>
+    <div class="tabuada-area"></div>
 
     <script>
-        const output = document.getElementById("output")
+        let tabuadaArea = document.querySelector('.tabuada-area')
 
-        function mostrarTabuada() {
-            let msg = ""
-            let n = parseFloat(prompt("digite um número"))
-
-            for (let i = 0; i <= 1000; i++) {
-                if (i === 10) {
-                    break
-                }
-                msg += `${n} x ${i} = ${(n * i)} <br>`
+        mostrarTabuada = () => {
+            let number = prompt("Digite um numero: ");
+            for(let i = 0; i <= 10; i++) {
+                tabuadaArea.innerHTML += `<p>
+                ${i} x ${number} = ${i * number}
+                </p>`
             }
-            output.innerHTML = msg
         }
 
-        function limparTabuada() {
-            output.innerHTML = ""
+        removertabuada = () => {
+            tabuadaArea.innerHTML = ''
         }
-
-
 
     </script>
-</body>
 
+
+</body>
 </html>

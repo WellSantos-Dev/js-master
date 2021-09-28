@@ -8,36 +8,32 @@ Obesidade Grau II - 35 a 40 kg/m2
 Obesidade Grau III - maior que 40 kg/m2
 */
 
-function calcularIMC(peso, altura, callback) {
-    if (peso === undefined || altura === undefined) {
-        throw Error("need two parameters: weight and height")
+function calcularImc(peso, altura, cb) {
+
+    if(peso == undefined || altura == undefined) {
+        console.log("Por favor, preencha os campos 'peso' e 'altura'")
     }
     let imc = peso / (altura * altura)
-    if (typeof callback === "function") {
-        return callback(imc)
-    }
-    return imc
+
+    cb(imc)
 }
 
-function classificaIMC(imc) {
-    if (imc <= 16.9) {
-        return 'muito abaixo do peso';
-    } else if (imc <= 18.4) {
-        return 'abaixo do peso';
-    } else if (imc <= 24.9) {
-        return 'normal';
-    } else if (imc <= 29.9) {
-        return 'acima do peso';
-    } else if (imc <= 34.9) {
-        return 'obesidade 1';
-    } else if (imc <= 40) {
-        return 'obesidade 2';
-    } else {
-        return 'obesidade 3';
+function informarImc(imc) {
+    if(imc >= 16 && imc <= 16.9) {
+        console.log("Você está muito abaixo do peso!") 
+    } else if(imc >= 17 && imc <= 18.4) {
+        console.log("Você está abaixo do peso.") 
+    } else if(imc >= 18.5 && imc <= 24.9) {
+        console.log("Seu peso está normal.") 
+    } else if(imc >= 25) {
+        console.log("Você está acima do peso.") 
+    } else if(imc >= 30) {
+        console.log("Você está obeso. Grau: I") 
+    } else if(imc >= 35) {
+        console.log("Você está obeso. Grau: II") 
+    } else if(imc > 40) {
+        console.log("Você está obeso. Grau: III") 
     }
 }
 
-let imc = calcularIMC(80, 1.65)
-let imc2 = calcularIMC(80, 1.65, classificaIMC)
-console.log(imc)
-console.log(imc2)
+calcularImc(68, 1.72, informarImc)

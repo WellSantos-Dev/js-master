@@ -5,19 +5,28 @@ Deve gerar um erro se receber um parâmetro não número
 Deve retornar zero caso não receba nenhum parâmetro
 */
 
-(function () {
+(function() {
+
     function calcularMedia() {
-        let total = 0;
-        let qtd = arguments.length;
-        for (let i = 0; i < qtd; i++) {
-            if (typeof arguments[i] !== "number") {
-                throw Error("only numbers")
+        let sum = 0;
+        let media = 0;
+        let qtd = arguments.length
+        for(let i = 0; i < arguments.length; i++) {
+            if(typeof arguments[i] != 'number') {
+                console.log("Por favor, digite um numero");
+                break;
             }
-            total += arguments[i]
+            let resultSum = (sum += arguments[i]);
+            media = resultSum / qtd;
         }
-        return (total / qtd) || 0
+
+        if(media == 0) {
+            console.log("Digite os números separados por vírgula. Ex: 1, 2, 3");
+        } else {
+            console.log(`A media é: ${media}`)
+        }
     }
 
-    let media = calcularMedia(2, 3, 4)
-    console.log(media)
+    calcularMedia(1, 2, 3)
+    
 })()
